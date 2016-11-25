@@ -10,9 +10,17 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
+    
+    let APP_ID = "YOUR-APPLICATION-ID"
+    let SECRET_KEY = "YOUR-APPLICATION-IOS-SECRET-KEY"
+    let VERSION_NUM = "v1"
 
     var window: UIWindow?
-
+    var shared: AppDelegate {
+        get {
+            return UIApplication.shared.delegate as! AppDelegate
+        }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -20,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         splitViewController.delegate = self
+        
+        Backendless.sharedInstance().initApp(APP_ID, secret:SECRET_KEY, version:VERSION_NUM)
+        
         return true
     }
 

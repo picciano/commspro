@@ -37,6 +37,7 @@
 		AF30FDDF1DE8B70F00211256 /* CommsProStyleKit.pcvd */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = CommsProStyleKit.pcvd; sourceTree = "<group>"; };
 		AF30FDE11DE8B75F00211256 /* CommsProStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommsProStyleKit.swift; sourceTree = "<group>"; };
 		AF30FDE31DE8BFE900211256 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = commspro/Podfile; sourceTree = "<group>"; };
+		AF30FDE61DE8C3A100211256 /* commspro-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "commspro-Bridging-Header.h"; sourceTree = "<group>"; };
 		BF4E9B8C71253C4967E66DB6 /* Pods-commspro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-commspro.release.xcconfig"; path = "Pods/Target Support Files/Pods-commspro/Pods-commspro.release.xcconfig"; sourceTree = "<group>"; };
 		D4F9468955016254DB83B55D /* Pods_commspro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_commspro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D2FE18633D3B70FB0634A2 /* Pods-commspro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-commspro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-commspro/Pods-commspro.debug.xcconfig"; sourceTree = "<group>"; };
@@ -94,16 +95,13 @@
 			isa = PBXGroup;
 			children = (
 				AF01EDBF1DE89ADF0021582D /* AppDelegate.swift */,
-				AF01EDC11DE89ADF0021582D /* MasterViewController.swift */,
-				AF01EDD31DE8A4170021582D /* AccountViewController.swift */,
-				AF30FDD51DE8ACAD00211256 /* HiddenViewController.swift */,
-				AF30FDD71DE8ACB900211256 /* ChannelViewController.swift */,
-				AF30FDD91DE8ACD300211256 /* SplashViewController.swift */,
+				AF30FDE51DE8C23500211256 /* View Controllers */,
 				AF01EDC51DE89ADF0021582D /* Main.storyboard */,
 				AF30FDDD1DE8B70F00211256 /* Assets */,
 				AF01EDC81DE89ADF0021582D /* Assets.xcassets */,
 				AF01EDCA1DE89ADF0021582D /* LaunchScreen.storyboard */,
 				AF01EDCD1DE89ADF0021582D /* Info.plist */,
+				AF30FDE61DE8C3A100211256 /* commspro-Bridging-Header.h */,
 			);
 			path = commspro;
 			sourceTree = "<group>";
@@ -123,6 +121,18 @@
 				AF30FDE11DE8B75F00211256 /* CommsProStyleKit.swift */,
 			);
 			path = PaintCode;
+			sourceTree = "<group>";
+		};
+		AF30FDE51DE8C23500211256 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AF01EDC11DE89ADF0021582D /* MasterViewController.swift */,
+				AF01EDD31DE8A4170021582D /* AccountViewController.swift */,
+				AF30FDD51DE8ACAD00211256 /* HiddenViewController.swift */,
+				AF30FDD71DE8ACB900211256 /* ChannelViewController.swift */,
+				AF30FDD91DE8ACD300211256 /* SplashViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,6 +396,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.picciano.commspro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "commspro/commspro-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -400,6 +411,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.picciano.commspro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "commspro/commspro-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
