@@ -10,12 +10,9 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
-    
-    let APP_ID = "YOUR-APPLICATION-ID"
-    let SECRET_KEY = "YOUR-APPLICATION-IOS-SECRET-KEY"
-    let VERSION_NUM = "v1"
 
     var window: UIWindow?
+    
     var shared: AppDelegate {
         get {
             return UIApplication.shared.delegate as! AppDelegate
@@ -29,7 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         splitViewController.delegate = self
         
-        Backendless.sharedInstance().initApp(APP_ID, secret:SECRET_KEY, version:VERSION_NUM)
+        // Backendless
+        if let infoPlist = Bundle.main.infoDictionary,
+            let appID = infoPlist["BACKENDLESS_COMMS_APP_ID"] as? String,
+            let secretKey = infoPlist["BACKENDLESS_COMMS_SECRET_KEY"] as? String,
+            let versionNum = infoPlist["BACKENDLESS_COMMS_VERSION_NUM"] as? String {
+            Backendless.sharedInstance().initApp(appID, secret:secretKey, version:versionNum)
+        }
         
         return true
     }

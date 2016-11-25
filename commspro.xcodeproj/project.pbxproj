@@ -38,6 +38,9 @@
 		AF30FDE11DE8B75F00211256 /* CommsProStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommsProStyleKit.swift; sourceTree = "<group>"; };
 		AF30FDE31DE8BFE900211256 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = commspro/Podfile; sourceTree = "<group>"; };
 		AF30FDE61DE8C3A100211256 /* commspro-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "commspro-Bridging-Header.h"; sourceTree = "<group>"; };
+		AF30FDE71DE8C9C100211256 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		AF30FDE81DE8CA0500211256 /* Keys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Keys.xcconfig; sourceTree = "<group>"; };
+		AF8A6D701DE8D527007D9296 /* Keys.example.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Keys.example.xcconfig; sourceTree = "<group>"; };
 		BF4E9B8C71253C4967E66DB6 /* Pods-commspro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-commspro.release.xcconfig"; path = "Pods/Target Support Files/Pods-commspro/Pods-commspro.release.xcconfig"; sourceTree = "<group>"; };
 		D4F9468955016254DB83B55D /* Pods_commspro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_commspro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D2FE18633D3B70FB0634A2 /* Pods-commspro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-commspro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-commspro/Pods-commspro.debug.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +104,9 @@
 				AF01EDC81DE89ADF0021582D /* Assets.xcassets */,
 				AF01EDCA1DE89ADF0021582D /* LaunchScreen.storyboard */,
 				AF01EDCD1DE89ADF0021582D /* Info.plist */,
+				AF30FDE71DE8C9C100211256 /* Config.xcconfig */,
+				AF8A6D701DE8D527007D9296 /* Keys.example.xcconfig */,
+				AF30FDE81DE8CA0500211256 /* Keys.xcconfig */,
 				AF30FDE61DE8C3A100211256 /* commspro-Bridging-Header.h */,
 			);
 			path = commspro;
@@ -295,6 +301,7 @@
 /* Begin XCBuildConfiguration section */
 		AF01EDCE1DE89ADF0021582D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF30FDE71DE8C9C100211256 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -345,6 +352,7 @@
 		};
 		AF01EDCF1DE89ADF0021582D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF30FDE71DE8C9C100211256 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

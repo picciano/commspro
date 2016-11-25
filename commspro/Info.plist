@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>BACKENDLESS_COMMS_APP_ID</key>
+	<string>${BACKENDLESS_COMMS_APP_ID}</string>
+	<key>BACKENDLESS_COMMS_SECRET_KEY</key>
+	<string>${BACKENDLESS_COMMS_SECRET_KEY}</string>
+	<key>BACKENDLESS_COMMS_VERSION_NUM</key>
+	<string>${BACKENDLESS_COMMS_VERSION_NUM}</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

@@ -1,0 +1,10 @@
+//
+//  Config.xcconfig
+//  commspro
+//
+//  Created by Anthony Picciano on 11/25/16.
+//  Copyright © 2016 Anthony Picciano. All rights reserved.
+//
+
+#include "Keys.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) BACKENDLESS_COMMS_APP_ID=@\"$(BACKENDLESS_COMMS_APP_ID)\" BACKENDLESS_COMMS_SECRET_KEY=@\"$(BACKENDLESS_COMMS_SECRET_KEY)\" BACKENDLESS_COMMS_VERSION_NUM=@\"$(BACKENDLESS_COMMS_VERSION_NUM)\"

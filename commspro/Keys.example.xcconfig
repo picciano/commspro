@@ -1,0 +1,11 @@
+//
+//  Keys.example.xcconfig
+//  commspro
+//
+//  Created by Anthony Picciano on 11/25/16.
+//  Copyright © 2016 Anthony Picciano. All rights reserved.
+//
+
+BACKENDLESS_COMMS_APP_ID = YOUR_APP_ID_HERE
+BACKENDLESS_COMMS_SECRET_KEY = YOUR_SECRET_KEY_HERE
+BACKENDLESS_COMMS_VERSION_NUM = v1
