@@ -102,12 +102,7 @@
 				AF01EDC51DE89ADF0021582D /* Main.storyboard */,
 				AF30FDDD1DE8B70F00211256 /* Assets */,
 				AF01EDC81DE89ADF0021582D /* Assets.xcassets */,
-				AF01EDCA1DE89ADF0021582D /* LaunchScreen.storyboard */,
-				AF01EDCD1DE89ADF0021582D /* Info.plist */,
-				AF30FDE71DE8C9C100211256 /* Config.xcconfig */,
-				AF8A6D701DE8D527007D9296 /* Keys.example.xcconfig */,
-				AF30FDE81DE8CA0500211256 /* Keys.xcconfig */,
-				AF30FDE61DE8C3A100211256 /* commspro-Bridging-Header.h */,
+				AF8A6D711DE8D63B007D9296 /* Support Files */,
 			);
 			path = commspro;
 			sourceTree = "<group>";
@@ -116,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				AF30FDDE1DE8B70F00211256 /* PaintCode */,
+				AF8A6D721DE8D64C007D9296 /* Storyboards */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -139,6 +135,27 @@
 				AF30FDD91DE8ACD300211256 /* SplashViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		AF8A6D711DE8D63B007D9296 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF01EDCD1DE89ADF0021582D /* Info.plist */,
+				AF30FDE71DE8C9C100211256 /* Config.xcconfig */,
+				AF8A6D701DE8D527007D9296 /* Keys.example.xcconfig */,
+				AF30FDE81DE8CA0500211256 /* Keys.xcconfig */,
+				AF30FDE61DE8C3A100211256 /* commspro-Bridging-Header.h */,
+			);
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		AF8A6D721DE8D64C007D9296 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AF01EDCA1DE89ADF0021582D /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
