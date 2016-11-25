@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		AF01EDC01DE89ADF0021582D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01EDBF1DE89ADF0021582D /* AppDelegate.swift */; };
 		AF01EDC21DE89ADF0021582D /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01EDC11DE89ADF0021582D /* MasterViewController.swift */; };
-		AF01EDC41DE89ADF0021582D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01EDC31DE89ADF0021582D /* DetailViewController.swift */; };
 		AF01EDC71DE89ADF0021582D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF01EDC51DE89ADF0021582D /* Main.storyboard */; };
 		AF01EDC91DE89ADF0021582D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF01EDC81DE89ADF0021582D /* Assets.xcassets */; };
 		AF01EDCC1DE89ADF0021582D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF01EDCA1DE89ADF0021582D /* LaunchScreen.storyboard */; };
+		AF01EDD41DE8A4170021582D /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01EDD31DE8A4170021582D /* AccountViewController.swift */; };
+		AF30FDD61DE8ACAD00211256 /* HiddenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30FDD51DE8ACAD00211256 /* HiddenViewController.swift */; };
+		AF30FDD81DE8ACB900211256 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30FDD71DE8ACB900211256 /* ChannelViewController.swift */; };
+		AF30FDDA1DE8ACD300211256 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30FDD91DE8ACD300211256 /* SplashViewController.swift */; };
+		AF30FDE01DE8B70F00211256 /* CommsProStyleKit.pcvd in Resources */ = {isa = PBXBuildFile; fileRef = AF30FDDF1DE8B70F00211256 /* CommsProStyleKit.pcvd */; };
+		AF30FDE21DE8B75F00211256 /* CommsProStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30FDE11DE8B75F00211256 /* CommsProStyleKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AF01EDBC1DE89ADE0021582D /* commspro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = commspro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF01EDBF1DE89ADF0021582D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF01EDC11DE89ADF0021582D /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		AF01EDC31DE89ADF0021582D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		AF01EDC61DE89ADF0021582D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF01EDC81DE89ADF0021582D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF01EDCB1DE89ADF0021582D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF01EDCD1DE89ADF0021582D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF01EDD31DE8A4170021582D /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		AF30FDD51DE8ACAD00211256 /* HiddenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiddenViewController.swift; sourceTree = "<group>"; };
+		AF30FDD71DE8ACB900211256 /* ChannelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
+		AF30FDD91DE8ACD300211256 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		AF30FDDF1DE8B70F00211256 /* CommsProStyleKit.pcvd */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = CommsProStyleKit.pcvd; sourceTree = "<group>"; };
+		AF30FDE11DE8B75F00211256 /* CommsProStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommsProStyleKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +68,34 @@
 			children = (
 				AF01EDBF1DE89ADF0021582D /* AppDelegate.swift */,
 				AF01EDC11DE89ADF0021582D /* MasterViewController.swift */,
-				AF01EDC31DE89ADF0021582D /* DetailViewController.swift */,
+				AF01EDD31DE8A4170021582D /* AccountViewController.swift */,
+				AF30FDD51DE8ACAD00211256 /* HiddenViewController.swift */,
+				AF30FDD71DE8ACB900211256 /* ChannelViewController.swift */,
+				AF30FDD91DE8ACD300211256 /* SplashViewController.swift */,
 				AF01EDC51DE89ADF0021582D /* Main.storyboard */,
+				AF30FDDD1DE8B70F00211256 /* Assets */,
 				AF01EDC81DE89ADF0021582D /* Assets.xcassets */,
 				AF01EDCA1DE89ADF0021582D /* LaunchScreen.storyboard */,
 				AF01EDCD1DE89ADF0021582D /* Info.plist */,
 			);
 			path = commspro;
+			sourceTree = "<group>";
+		};
+		AF30FDDD1DE8B70F00211256 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				AF30FDDE1DE8B70F00211256 /* PaintCode */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		AF30FDDE1DE8B70F00211256 /* PaintCode */ = {
+			isa = PBXGroup;
+			children = (
+				AF30FDDF1DE8B70F00211256 /* CommsProStyleKit.pcvd */,
+				AF30FDE11DE8B75F00211256 /* CommsProStyleKit.swift */,
+			);
+			path = PaintCode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF01EDCC1DE89ADF0021582D /* LaunchScreen.storyboard in Resources */,
+				AF30FDE01DE8B70F00211256 /* CommsProStyleKit.pcvd in Resources */,
 				AF01EDC91DE89ADF0021582D /* Assets.xcassets in Resources */,
 				AF01EDC71DE89ADF0021582D /* Main.storyboard in Resources */,
 			);
@@ -140,8 +172,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF01EDC41DE89ADF0021582D /* DetailViewController.swift in Sources */,
+				AF30FDD61DE8ACAD00211256 /* HiddenViewController.swift in Sources */,
 				AF01EDC21DE89ADF0021582D /* MasterViewController.swift in Sources */,
+				AF01EDD41DE8A4170021582D /* AccountViewController.swift in Sources */,
+				AF30FDE21DE8B75F00211256 /* CommsProStyleKit.swift in Sources */,
+				AF30FDD81DE8ACB900211256 /* ChannelViewController.swift in Sources */,
+				AF30FDDA1DE8ACD300211256 /* SplashViewController.swift in Sources */,
 				AF01EDC01DE89ADF0021582D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +342,7 @@
 				AF01EDD21DE89ADF0021582D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
