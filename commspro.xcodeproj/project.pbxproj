@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D67090B7E6294EAB6A5240C /* Pods_commspro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F9468955016254DB83B55D /* Pods_commspro.framework */; };
 		AF01EDC01DE89ADF0021582D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01EDBF1DE89ADF0021582D /* AppDelegate.swift */; };
 		AF01EDC21DE89ADF0021582D /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01EDC11DE89ADF0021582D /* MasterViewController.swift */; };
 		AF01EDC71DE89ADF0021582D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF01EDC51DE89ADF0021582D /* Main.storyboard */; };
@@ -36,6 +37,9 @@
 		AF30FDDF1DE8B70F00211256 /* CommsProStyleKit.pcvd */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = CommsProStyleKit.pcvd; sourceTree = "<group>"; };
 		AF30FDE11DE8B75F00211256 /* CommsProStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommsProStyleKit.swift; sourceTree = "<group>"; };
 		AF30FDE31DE8BFE900211256 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = commspro/Podfile; sourceTree = "<group>"; };
+		BF4E9B8C71253C4967E66DB6 /* Pods-commspro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-commspro.release.xcconfig"; path = "Pods/Target Support Files/Pods-commspro/Pods-commspro.release.xcconfig"; sourceTree = "<group>"; };
+		D4F9468955016254DB83B55D /* Pods_commspro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_commspro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7D2FE18633D3B70FB0634A2 /* Pods-commspro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-commspro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-commspro/Pods-commspro.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,18 +47,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D67090B7E6294EAB6A5240C /* Pods_commspro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D7F34C430DC0D98241534EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4F9468955016254DB83B55D /* Pods_commspro.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8F7F8FAD4BB2B0318C3A3CAB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D7D2FE18633D3B70FB0634A2 /* Pods-commspro.debug.xcconfig */,
+				BF4E9B8C71253C4967E66DB6 /* Pods-commspro.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AF01EDB31DE89ADE0021582D = {
 			isa = PBXGroup;
 			children = (
 				AF30FDE31DE8BFE900211256 /* Podfile */,
 				AF01EDBE1DE89ADE0021582D /* commspro */,
 				AF01EDBD1DE89ADE0021582D /* Products */,
+				8F7F8FAD4BB2B0318C3A3CAB /* Pods */,
+				8D7F34C430DC0D98241534EF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,9 +132,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF01EDD01DE89ADF0021582D /* Build configuration list for PBXNativeTarget "commspro" */;
 			buildPhases = (
+				B3238DB66EEC4620EB040417 /* [CP] Check Pods Manifest.lock */,
 				AF01EDB81DE89ADE0021582D /* Sources */,
 				AF01EDB91DE89ADE0021582D /* Frameworks */,
 				AF01EDBA1DE89ADE0021582D /* Resources */,
+				C8E5775E077561B1B1E7EB5C /* [CP] Embed Pods Frameworks */,
+				7D3299BFBCFBACC6872C6248 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,6 +197,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7D3299BFBCFBACC6872C6248 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-commspro/Pods-commspro-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3238DB66EEC4620EB040417 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C8E5775E077561B1B1E7EB5C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-commspro/Pods-commspro-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AF01EDB81DE89ADE0021582D /* Sources */ = {
@@ -303,6 +378,7 @@
 		};
 		AF01EDD11DE89ADF0021582D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7D2FE18633D3B70FB0634A2 /* Pods-commspro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PC5SP4V242;
@@ -316,6 +392,7 @@
 		};
 		AF01EDD21DE89ADF0021582D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF4E9B8C71253C4967E66DB6 /* Pods-commspro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PC5SP4V242;
