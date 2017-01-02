@@ -14,7 +14,7 @@ class Channel: NSObject {
     var name: String!
     
     static func get(completion: @escaping ([Channel]) -> ()) {
-        dataStore?.find(Channel.dataQuery, response: { (collection) in
+        dataStore?.find(Channel.dataQuery, response: { collection in
             completion(collection?.getCurrentPage() as! [Channel])
         }, error: { (fault) in
             debugPrint(fault!)

@@ -21,7 +21,7 @@ class Group: NSObject {
     }
     
     static func get(completion: @escaping ([Group]) -> ()) {
-        dataStore?.find(Group.dataQuery, response: { (collection) in
+        dataStore?.find(Group.dataQuery, response: { collection in
             completion(collection?.getCurrentPage() as! [Group])
         }, error: { (fault) in
             debugPrint(fault!)

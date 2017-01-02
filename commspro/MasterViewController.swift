@@ -15,7 +15,7 @@ class MasterViewController: UITableViewController {
     let sections = [ "Management",
                      "Subscribed Channels" ]
     
-    let management = [ "Account", "Hidden Channels", "About Comms Pro" ]
+    let management = [ "Manage Account", "Hidden Channels", "About Comms Pro" ]
     var subscribedChannels = [ "Alpha", "Bravo", "Charlie" ]
     var groups = [Group]()
 

@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             let secretKey = infoPlist["BACKENDLESS_COMMS_SECRET_KEY"] as? String,
             let versionNum = infoPlist["BACKENDLESS_COMMS_VERSION_NUM"] as? String {
             Backendless.sharedInstance().initApp(appID, secret:secretKey, version:versionNum)
+            Backendless.sharedInstance().userService.setStayLoggedIn(true)
         }
         
         return true
