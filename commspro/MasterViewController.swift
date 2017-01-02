@@ -39,6 +39,13 @@ class MasterViewController: UITableViewController {
             splashViewController?.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
             splashViewController?.navigationItem.leftItemsSupplementBackButton = true
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(accountDidChangeHandler), name: UserDidLogIn, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(accountDidChangeHandler), name: UserDidLogOut, object: nil)
+    }
+    
+    func accountDidChangeHandler(notification: Notification) {
+        tableView.reloadData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -104,6 +111,18 @@ class MasterViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = item(for: indexPath)
+        cell.accessoryView = nil
+        
+        if indexPath.section == 0 && indexPath.row == 0 {
+            let currentUser: BackendlessUser? = Backendless.sharedInstance().userService.currentUser
+            if let currentUser = currentUser {
+                let accountlabel = UILabel()
+                accountlabel.text = currentUser.name as String?
+                accountlabel.sizeToFit()
+                cell.accessoryView = accountlabel
+            }
+        }
+        
         return cell
     }
 

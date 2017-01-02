@@ -8,6 +8,9 @@
 
 import UIKit
 
+let UserDidLogOut = NSNotification.Name(rawValue: "UserDidLogOut")
+let UserDidLogIn = NSNotification.Name(rawValue: "UserDidLogIn")
+
 class AccountViewController: UIViewController {
 
     @IBOutlet weak var currentAccountLabel: UILabel!
@@ -64,6 +67,7 @@ class AccountViewController: UIViewController {
     @IBAction func logOutAction(_ sender: Any) {
         Backendless.sharedInstance().userService.logout( { user in
             debugPrint("User logged out.")
+            NotificationCenter.default.post(name: UserDidLogOut, object: user)
             self.clearFields()
         }, error: { (fault) -> () in
             debugPrint("Server reported an error: \(fault)")
@@ -76,6 +80,7 @@ class AccountViewController: UIViewController {
             let password = passwordField.text {
             Backendless.sharedInstance().userService.login(accountName, password: password, response: { user in
                 debugPrint("User has been logged in (ASYNC): \(user)")
+                NotificationCenter.default.post(name: UserDidLogIn, object: user)
                 self.clearFields()
             }, error: { (fault) -> () in
                 debugPrint("Server reported an error: \(fault)")
