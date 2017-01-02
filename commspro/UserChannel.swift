@@ -1,49 +1,50 @@
 //
-//  Subscription.swift
+//  UserChannel.swift
 //  commspro
 //
 //  Created by Anthony Picciano on 1/2/17.
 //  Copyright © 2017 Anthony Picciano. All rights reserved.
 //
 
-class Subscription: NSObject {
+class UserChannel: NSObject {
     
     static fileprivate let backendless = Backendless.sharedInstance()
-    static fileprivate let dataStore = backendless?.data.of(Subscription.ofClass())
+    static fileprivate let dataStore = backendless?.data.of(UserChannel.ofClass())
     
     var user: BackendlessUser!
     var channel: Channel!
     
-    static func get(completion: @escaping ([Subscription]) -> ()) {
-        
+    static func get(completion: @escaping ([UserChannel]) -> ()) {
         let currentUser: BackendlessUser? = backendless?.userService.currentUser
         
         guard currentUser != nil else {
-            completion([Subscription]())
+            completion([UserChannel]())
             return
         }
         
-        let dataQuery = BackendlessDataQuery()
-        dataQuery.whereClause = "user.name = \'\(currentUser?.name)\'"
+        let dataQuery = UserChannel.dataQuery
+        if let objectId = currentUser?.objectId {
+            dataQuery.whereClause = "user.objectId = \'\(objectId)\'"
+        }
         
         dataStore?.find(dataQuery, response: { collection in
-            completion(collection?.getCurrentPage() as! [Subscription])
+            completion(collection?.getCurrentPage() as! [UserChannel])
         }, error: { fault in
             debugPrint(fault!)
-            completion([Subscription]())
+            completion([UserChannel]())
         })
     }
     
     static fileprivate var dataQuery: BackendlessDataQuery {
         let dataQuery = BackendlessDataQuery()
-        dataQuery.queryOptions = Subscription.sortOption
+        dataQuery.queryOptions = UserChannel.sortOption
         
         return dataQuery
     }
     
     static fileprivate var sortOption: QueryOptions {
         let queryOptions = QueryOptions()
-        queryOptions.sort(by: ["channel"])
+        queryOptions.sort(by: ["created"])
         
         return queryOptions
     }

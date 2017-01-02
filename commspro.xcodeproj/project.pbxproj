@@ -22,7 +22,7 @@
 		AF30FDE41DE8BFE900211256 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AF30FDE31DE8BFE900211256 /* Podfile */; };
 		AF4EDF5F1E1ABC1100FB15EF /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4EDF5E1E1ABC1100FB15EF /* Channel.swift */; };
 		AF4EDF611E1ABC1F00FB15EF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4EDF601E1ABC1F00FB15EF /* Message.swift */; };
-		AF4EDF631E1ABC2800FB15EF /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4EDF621E1ABC2800FB15EF /* Subscription.swift */; };
+		AF4EDF631E1ABC2800FB15EF /* UserChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4EDF621E1ABC2800FB15EF /* UserChannel.swift */; };
 		AF4EDF651E1ABCB700FB15EF /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4EDF641E1ABCB700FB15EF /* Group.swift */; };
 		AF4EDF681E1AE86A00FB15EF /* CommsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4EDF671E1AE86A00FB15EF /* CommsButton.swift */; };
 /* End PBXBuildFile section */
@@ -47,7 +47,7 @@
 		AF30FDE81DE8CA0500211256 /* Keys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Keys.xcconfig; sourceTree = "<group>"; };
 		AF4EDF5E1E1ABC1100FB15EF /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		AF4EDF601E1ABC1F00FB15EF /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		AF4EDF621E1ABC2800FB15EF /* Subscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
+		AF4EDF621E1ABC2800FB15EF /* UserChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserChannel.swift; sourceTree = "<group>"; };
 		AF4EDF641E1ABCB700FB15EF /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		AF4EDF671E1AE86A00FB15EF /* CommsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommsButton.swift; sourceTree = "<group>"; };
 		AF8A6D701DE8D527007D9296 /* Keys.example.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Keys.example.xcconfig; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 				AF4EDF5E1E1ABC1100FB15EF /* Channel.swift */,
 				AF4EDF641E1ABCB700FB15EF /* Group.swift */,
 				AF4EDF601E1ABC1F00FB15EF /* Message.swift */,
-				AF4EDF621E1ABC2800FB15EF /* Subscription.swift */,
+				AF4EDF621E1ABC2800FB15EF /* UserChannel.swift */,
 			);
 			name = "Data Objects";
 			sourceTree = "<group>";
@@ -320,7 +320,7 @@
 				AF4EDF5F1E1ABC1100FB15EF /* Channel.swift in Sources */,
 				AF01EDC21DE89ADF0021582D /* MasterViewController.swift in Sources */,
 				AF4EDF611E1ABC1F00FB15EF /* Message.swift in Sources */,
-				AF4EDF631E1ABC2800FB15EF /* Subscription.swift in Sources */,
+				AF4EDF631E1ABC2800FB15EF /* UserChannel.swift in Sources */,
 				AF01EDD41DE8A4170021582D /* AccountViewController.swift in Sources */,
 				AF4EDF681E1AE86A00FB15EF /* CommsButton.swift in Sources */,
 				AF30FDE21DE8B75F00211256 /* CommsProStyleKit.swift in Sources */,

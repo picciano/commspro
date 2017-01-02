@@ -16,13 +16,13 @@ class MasterViewController: UITableViewController {
                      "Subscribed Channels" ]
     
     let management = [ "Manage Account", "Hidden Channels", "About Comms Pro" ]
-    var subscribedChannels = [ "Alpha", "Bravo", "Charlie" ]
+    var subscribedChannels: [Channel]?
     var groups = [Group]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.navigationItem.leftBarButtonItem = self.editButtonItem
+        navigationItem.leftBarButtonItem = editButtonItem
         
         //
         
@@ -31,16 +31,13 @@ class MasterViewController: UITableViewController {
             self.tableView.reloadData()
         }
         
-        Subscription.get { subscriptions in
-            for subscription in subscriptions {
-                debugPrint(subscription.channel.name)
-            }
-        }
+        loadSubscribedChannels()
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
-        self.navigationItem.rightBarButtonItem = addButton
-        if let split = self.splitViewController {
-            let controllers = split.viewControllers
+        navigationItem.rightBarButtonItem = addButton
+        
+        if let splitViewController = splitViewController {
+            let controllers = splitViewController.viewControllers
             splashViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? SplashViewController
             splashViewController?.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
             splashViewController?.navigationItem.leftItemsSupplementBackButton = true
@@ -51,17 +48,22 @@ class MasterViewController: UITableViewController {
     }
     
     func accountDidChangeHandler(notification: Notification) {
+        loadSubscribedChannels()
         tableView.reloadData()
+    }
+    
+    fileprivate func loadSubscribedChannels() {
+        subscribedChannels = nil
+        
+        UserChannel.get { userChannels in
+            self.subscribedChannels = userChannels.map { $0.channel }
+            self.tableView.reloadData()
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        self.clearsSelectionOnViewWillAppear = self.splitViewController!.isCollapsed
+        clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     func insertNewObject(_ sender: Any) {
@@ -108,7 +110,7 @@ class MasterViewController: UITableViewController {
         case 0:
             return management.count
         case 1:
-            return subscribedChannels.count
+            return subscribedChannels?.count ?? 0
         default:
             return groups[section - 2].channels.count
         }
@@ -188,7 +190,7 @@ class MasterViewController: UITableViewController {
         case 0:
             item = management[indexPath.row]
         case 1:
-            item = subscribedChannels[indexPath.row]
+            item = subscribedChannels?[indexPath.row].name
         default:
             let group = groups[indexPath.section - 2]
             item = group.sortedChannels[indexPath.row].name

@@ -42,6 +42,10 @@ class AccountViewController: UIViewController {
         passwordField.text = nil
         repeatPasswordField.text = nil
         
+        accountNameField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        repeatPasswordField.resignFirstResponder()
+        
         updateDisplay()
     }
     
