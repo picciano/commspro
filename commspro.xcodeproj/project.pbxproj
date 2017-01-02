@@ -20,6 +20,10 @@
 		AF30FDE01DE8B70F00211256 /* CommsProStyleKit.pcvd in Resources */ = {isa = PBXBuildFile; fileRef = AF30FDDF1DE8B70F00211256 /* CommsProStyleKit.pcvd */; };
 		AF30FDE21DE8B75F00211256 /* CommsProStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30FDE11DE8B75F00211256 /* CommsProStyleKit.swift */; };
 		AF30FDE41DE8BFE900211256 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AF30FDE31DE8BFE900211256 /* Podfile */; };
+		AF4EDF5F1E1ABC1100FB15EF /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4EDF5E1E1ABC1100FB15EF /* Channel.swift */; };
+		AF4EDF611E1ABC1F00FB15EF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4EDF601E1ABC1F00FB15EF /* Message.swift */; };
+		AF4EDF631E1ABC2800FB15EF /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4EDF621E1ABC2800FB15EF /* Subscription.swift */; };
+		AF4EDF651E1ABCB700FB15EF /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4EDF641E1ABCB700FB15EF /* Group.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		AF30FDE61DE8C3A100211256 /* commspro-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "commspro-Bridging-Header.h"; sourceTree = "<group>"; };
 		AF30FDE71DE8C9C100211256 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		AF30FDE81DE8CA0500211256 /* Keys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Keys.xcconfig; sourceTree = "<group>"; };
+		AF4EDF5E1E1ABC1100FB15EF /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		AF4EDF601E1ABC1F00FB15EF /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		AF4EDF621E1ABC2800FB15EF /* Subscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
+		AF4EDF641E1ABCB700FB15EF /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		AF8A6D701DE8D527007D9296 /* Keys.example.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Keys.example.xcconfig; sourceTree = "<group>"; };
 		BF4E9B8C71253C4967E66DB6 /* Pods-commspro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-commspro.release.xcconfig"; path = "Pods/Target Support Files/Pods-commspro/Pods-commspro.release.xcconfig"; sourceTree = "<group>"; };
 		D4F9468955016254DB83B55D /* Pods_commspro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_commspro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				AF01EDBF1DE89ADF0021582D /* AppDelegate.swift */,
+				AF4EDF5D1E1ABBD500FB15EF /* Data Objects */,
 				AF30FDE51DE8C23500211256 /* View Controllers */,
 				AF01EDC51DE89ADF0021582D /* Main.storyboard */,
 				AF30FDDD1DE8B70F00211256 /* Assets */,
@@ -135,6 +144,17 @@
 				AF30FDD91DE8ACD300211256 /* SplashViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		AF4EDF5D1E1ABBD500FB15EF /* Data Objects */ = {
+			isa = PBXGroup;
+			children = (
+				AF4EDF5E1E1ABC1100FB15EF /* Channel.swift */,
+				AF4EDF641E1ABCB700FB15EF /* Group.swift */,
+				AF4EDF601E1ABC1F00FB15EF /* Message.swift */,
+				AF4EDF621E1ABC2800FB15EF /* Subscription.swift */,
+			);
+			name = "Data Objects";
 			sourceTree = "<group>";
 		};
 		AF8A6D711DE8D63B007D9296 /* Support Files */ = {
@@ -188,7 +208,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Anthony Picciano";
 				TargetAttributes = {
 					AF01EDBB1DE89ADE0021582D = {
@@ -284,8 +304,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF4EDF651E1ABCB700FB15EF /* Group.swift in Sources */,
 				AF30FDD61DE8ACAD00211256 /* HiddenViewController.swift in Sources */,
+				AF4EDF5F1E1ABC1100FB15EF /* Channel.swift in Sources */,
 				AF01EDC21DE89ADF0021582D /* MasterViewController.swift in Sources */,
+				AF4EDF611E1ABC1F00FB15EF /* Message.swift in Sources */,
+				AF4EDF631E1ABC2800FB15EF /* Subscription.swift in Sources */,
 				AF01EDD41DE8A4170021582D /* AccountViewController.swift in Sources */,
 				AF30FDE21DE8B75F00211256 /* CommsProStyleKit.swift in Sources */,
 				AF30FDD81DE8ACB900211256 /* ChannelViewController.swift in Sources */,
@@ -335,6 +359,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -386,6 +411,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

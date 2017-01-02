@@ -13,15 +13,11 @@ class MasterViewController: UITableViewController {
     var splashViewController: SplashViewController? = nil
     
     let sections = [ "Management",
-                     "Subscribed Channels",
-                     "Topical Channels",
-                     "Geographic Channels" ]
+                     "Subscribed Channels" ]
     
     let management = [ "Account", "Hidden Channels", "About Comms Pro" ]
     var subscribedChannels = [ "Alpha", "Bravo", "Charlie" ]
-    var topicalChannels = [ "Delta", "Echo", "Foxtrot" ]
-    var geographicChannels = [ "Golf", "Hotel", "India" ]
-
+    var groups = [Group]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +25,11 @@ class MasterViewController: UITableViewController {
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         
         //
+        
+        Group.get() { groups in
+            self.groups = groups
+            self.tableView.reloadData()
+        }
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         self.navigationItem.rightBarButtonItem = addButton
@@ -86,7 +87,7 @@ class MasterViewController: UITableViewController {
     // MARK: - Table View
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+        return sections.count + groups.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -95,12 +96,8 @@ class MasterViewController: UITableViewController {
             return management.count
         case 1:
             return subscribedChannels.count
-        case 2:
-            return topicalChannels.count
-        case 3:
-            return geographicChannels.count
         default:
-            return 0
+            return groups[section - 2].channels.count
         }
     }
 
@@ -125,7 +122,16 @@ class MasterViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sections[section]
+        var title: String?
+        
+        switch section {
+        case 0...1:
+            title = sections[section]
+        default:
+            title = groups[section - 2].name
+        }
+        
+        return title
     }
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -145,10 +151,8 @@ class MasterViewController: UITableViewController {
             } else {
                 performSegue(withIdentifier: "showSplash", sender: self)
             }
-        case 1...3:
-            performSegue(withIdentifier: "showChannel", sender: self)
         default:
-            break
+            performSegue(withIdentifier: "showChannel", sender: self)
         }
     }
     
@@ -160,12 +164,9 @@ class MasterViewController: UITableViewController {
             item = management[indexPath.row]
         case 1:
             item = subscribedChannels[indexPath.row]
-        case 2:
-            item = topicalChannels[indexPath.row]
-        case 3:
-            item = geographicChannels[indexPath.row]
         default:
-            break
+            let group = groups[indexPath.section - 2]
+            item = group.sortedChannels[indexPath.row].name
         }
         
         return item
