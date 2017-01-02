@@ -220,40 +220,49 @@
                                     <action selector="editingChanged:" destination="JbZ-vV-Nyc" eventType="editingChanged" id="AWJ-D9-ik1"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vy-s3-aiK">
-                                <rect key="frame" x="160" y="101" width="55" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vy-s3-aiK" customClass="CommsButton" customModule="commspro" customModuleProvider="target">
+                                <rect key="frame" x="127" y="101" width="120" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="55" id="dSb-mf-ywL"/>
+                                    <constraint firstAttribute="width" constant="120" id="dSb-mf-ywL"/>
                                     <constraint firstAttribute="height" constant="30" id="rPS-Z1-u67"/>
                                 </constraints>
-                                <state key="normal" title="Log Out"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonText" value="Log Out"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="logOutAction:" destination="JbZ-vV-Nyc" eventType="touchUpInside" id="SU2-gU-dJ3"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Obi-82-tue">
-                                <rect key="frame" x="126" y="291" width="123" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BNh-gV-Ylf">
+                                <rect key="frame" x="63" y="293" width="248" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEN-Eq-WG5">
-                                        <rect key="frame" x="0.0" y="0.0" width="42" height="30"/>
-                                        <state key="normal" title="Log In"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEN-Eq-WG5" customClass="CommsButton" customModule="commspro" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonText" value="Log In"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="logInAction:" destination="JbZ-vV-Nyc" eventType="touchUpInside" id="o6I-Zs-uto"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0i-6e-9Pj">
-                                        <rect key="frame" x="66" y="0.0" width="57" height="30"/>
-                                        <state key="normal" title="Register"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0i-6e-9Pj" customClass="CommsButton" customModule="commspro" customModuleProvider="target">
+                                        <rect key="frame" x="128" y="0.0" width="120" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonText" value="Register"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="registerAction:" destination="JbZ-vV-Nyc" eventType="touchUpInside" id="BOi-qy-wOz"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="123" id="qob-rJ-MJR"/>
-                                    <constraint firstAttribute="height" constant="30" id="toM-hZ-ute"/>
+                                    <constraint firstAttribute="width" constant="248" id="3ac-7P-t6u"/>
+                                    <constraint firstAttribute="height" constant="30" id="eLH-10-fY8"/>
                                 </constraints>
-                            </stackView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -269,18 +278,18 @@
                             <constraint firstItem="pvs-ti-MrO" firstAttribute="trailing" secondItem="t9M-ly-ggO" secondAttribute="trailingMargin" id="KP6-K9-4tC"/>
                             <constraint firstItem="hL6-dx-Q4C" firstAttribute="top" secondItem="NLp-VW-xys" secondAttribute="bottom" constant="8" id="NJ7-D1-w4H"/>
                             <constraint firstItem="ocx-AA-TY6" firstAttribute="trailing" secondItem="t9M-ly-ggO" secondAttribute="trailingMargin" id="O0t-uJ-DVh"/>
-                            <constraint firstItem="Obi-82-tue" firstAttribute="centerX" secondItem="t9M-ly-ggO" secondAttribute="centerX" id="OW3-fm-VqB"/>
                             <constraint firstItem="hL6-dx-Q4C" firstAttribute="leading" secondItem="t9M-ly-ggO" secondAttribute="leadingMargin" id="VMQ-lV-xFm"/>
                             <constraint firstItem="HbS-q8-Wj0" firstAttribute="leading" secondItem="t9M-ly-ggO" secondAttribute="leadingMargin" id="W6S-ad-dLz"/>
+                            <constraint firstItem="BNh-gV-Ylf" firstAttribute="centerX" secondItem="t9M-ly-ggO" secondAttribute="centerX" id="ZHp-cU-Blw"/>
                             <constraint firstItem="pvs-ti-MrO" firstAttribute="top" secondItem="0vy-s3-aiK" secondAttribute="bottom" constant="32" id="bQu-5d-WuA"/>
                             <constraint firstItem="2GL-iw-x3E" firstAttribute="leading" secondItem="t9M-ly-ggO" secondAttribute="leadingMargin" id="bua-m5-ngb"/>
                             <constraint firstItem="2GL-iw-x3E" firstAttribute="top" secondItem="Uwe-gn-d3h" secondAttribute="bottom" constant="17" id="cHE-ZV-BpC"/>
                             <constraint firstItem="YhU-JJ-Bf4" firstAttribute="leading" secondItem="hL6-dx-Q4C" secondAttribute="trailing" constant="8" id="gMA-66-wh0"/>
                             <constraint firstItem="Uwe-gn-d3h" firstAttribute="leading" secondItem="t9M-ly-ggO" secondAttribute="leadingMargin" id="nCC-OJ-IYU"/>
                             <constraint firstItem="YhU-JJ-Bf4" firstAttribute="trailing" secondItem="t9M-ly-ggO" secondAttribute="trailingMargin" id="qCt-qY-qsr"/>
-                            <constraint firstItem="Obi-82-tue" firstAttribute="top" secondItem="Vny-8f-Dxh" secondAttribute="bottom" constant="22" id="uPp-AO-e5M"/>
                             <constraint firstItem="0vy-s3-aiK" firstAttribute="top" secondItem="YhU-JJ-Bf4" secondAttribute="bottom" constant="8" id="ven-Nh-EO0"/>
                             <constraint firstItem="0vy-s3-aiK" firstAttribute="centerX" secondItem="t9M-ly-ggO" secondAttribute="centerX" id="wPO-OL-zoE"/>
+                            <constraint firstItem="BNh-gV-Ylf" firstAttribute="top" secondItem="Vny-8f-Dxh" secondAttribute="bottom" constant="24" id="ygw-iI-qwd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Manage Account" id="GM1-st-sGf"/>

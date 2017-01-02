@@ -23,6 +23,7 @@ class AccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = CommsProStyleKit.commsTan.withAlphaComponent(0.5)
 
         updateDisplay()
     }

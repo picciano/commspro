@@ -30,6 +30,12 @@ class MasterViewController: UITableViewController {
             self.groups = groups
             self.tableView.reloadData()
         }
+        
+        Subscription.get { subscriptions in
+            for subscription in subscriptions {
+                debugPrint(subscription.channel.name)
+            }
+        }
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         self.navigationItem.rightBarButtonItem = addButton
