@@ -18,6 +18,7 @@ class Post: NSObject {
     var read: Bool = false
     var plaintext: String?
     var ciphertext: String?
+    var created: Date!
     
     static func get(from channel: Channel, completion: @escaping ([Post]) -> ()) {
         let dataQuery = Post.dataQuery

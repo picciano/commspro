@@ -114,19 +114,65 @@
                                     <action selector="subscribeAction:" destination="T4p-1T-Cpo" eventType="touchUpInside" id="mBu-wv-0IJ"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JQX-LP-LyT">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JQX-LP-LyT">
                                 <rect key="frame" x="0.0" y="139" width="375" height="528"/>
                                 <color key="backgroundColor" red="0.80784313725490198" green="0.68235294117647061" blue="0.55686274509803924" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostTableViewCell" id="UYs-f5-yPg" customClass="PostTableViewCell" customModule="commspro" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UYs-f5-yPg" id="eU6-No-QqB">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sender Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXC-17-bvP">
+                                                    <rect key="frame" x="8" y="8" width="202" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="B40-iZ-Rxy"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plaintext" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyI-AU-Iah">
+                                                    <rect key="frame" x="8" y="30" width="359" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="3ZB-LC-FYc"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L33-Ph-NCh">
+                                                    <rect key="frame" x="218" y="8" width="149" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="Kea-YY-9c6"/>
+                                                        <constraint firstAttribute="width" constant="149" id="eaM-Nl-sPH"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="pXC-17-bvP" firstAttribute="leading" secondItem="eU6-No-QqB" secondAttribute="leadingMargin" id="NNE-i4-H5t"/>
+                                                <constraint firstItem="zyI-AU-Iah" firstAttribute="leading" secondItem="eU6-No-QqB" secondAttribute="leadingMargin" id="Ot0-Gq-AiK"/>
+                                                <constraint firstItem="L33-Ph-NCh" firstAttribute="top" secondItem="eU6-No-QqB" secondAttribute="topMargin" id="Y5f-Qc-AKG"/>
+                                                <constraint firstItem="zyI-AU-Iah" firstAttribute="top" secondItem="L33-Ph-NCh" secondAttribute="bottom" constant="1" id="abv-IC-p0W"/>
+                                                <constraint firstItem="L33-Ph-NCh" firstAttribute="leading" secondItem="pXC-17-bvP" secondAttribute="trailing" constant="8" id="cZb-QY-MrP"/>
+                                                <constraint firstItem="L33-Ph-NCh" firstAttribute="trailing" secondItem="eU6-No-QqB" secondAttribute="trailingMargin" id="jcE-ds-ipZ"/>
+                                                <constraint firstItem="pXC-17-bvP" firstAttribute="top" secondItem="eU6-No-QqB" secondAttribute="topMargin" id="uu7-eR-rOp"/>
+                                                <constraint firstItem="zyI-AU-Iah" firstAttribute="trailing" secondItem="eU6-No-QqB" secondAttribute="trailingMargin" id="znT-2b-7QX"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.65490196078431373" green="0.61176470588235299" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="createDateLabel" destination="L33-Ph-NCh" id="fkD-9d-5Kb"/>
+                                            <outlet property="plaintextLabel" destination="zyI-AU-Iah" id="Dqn-RQ-oKL"/>
+                                            <outlet property="senderNameLabel" destination="pXC-17-bvP" id="sMW-go-rz4"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
