@@ -14,6 +14,8 @@
 		AF01EDC91DE89ADF0021582D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF01EDC81DE89ADF0021582D /* Assets.xcassets */; };
 		AF01EDCC1DE89ADF0021582D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF01EDCA1DE89ADF0021582D /* LaunchScreen.storyboard */; };
 		AF01EDD41DE8A4170021582D /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01EDD31DE8A4170021582D /* AccountViewController.swift */; };
+		AF2F7B9B1E1C02D9006392B5 /* PostMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2F7B9A1E1C02D9006392B5 /* PostMessageViewController.swift */; };
+		AF2F7B9D1E1C0AC6006392B5 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2F7B9C1E1C0AC6006392B5 /* MessageTableViewCell.swift */; };
 		AF30FDD61DE8ACAD00211256 /* HiddenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30FDD51DE8ACAD00211256 /* HiddenViewController.swift */; };
 		AF30FDD81DE8ACB900211256 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30FDD71DE8ACB900211256 /* ChannelViewController.swift */; };
 		AF30FDDA1DE8ACD300211256 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30FDD91DE8ACD300211256 /* SplashViewController.swift */; };
@@ -36,6 +38,8 @@
 		AF01EDCB1DE89ADF0021582D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF01EDCD1DE89ADF0021582D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF01EDD31DE8A4170021582D /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		AF2F7B9A1E1C02D9006392B5 /* PostMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostMessageViewController.swift; sourceTree = "<group>"; };
+		AF2F7B9C1E1C0AC6006392B5 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		AF30FDD51DE8ACAD00211256 /* HiddenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiddenViewController.swift; sourceTree = "<group>"; };
 		AF30FDD71DE8ACB900211256 /* ChannelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
 		AF30FDD91DE8ACD300211256 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 				AF30FDD51DE8ACAD00211256 /* HiddenViewController.swift */,
 				AF30FDD71DE8ACB900211256 /* ChannelViewController.swift */,
 				AF30FDD91DE8ACD300211256 /* SplashViewController.swift */,
+				AF2F7B9A1E1C02D9006392B5 /* PostMessageViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				AF4EDF671E1AE86A00FB15EF /* CommsButton.swift */,
+				AF2F7B9C1E1C0AC6006392B5 /* MessageTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -322,8 +328,10 @@
 				AF4EDF611E1ABC1F00FB15EF /* Message.swift in Sources */,
 				AF4EDF631E1ABC2800FB15EF /* UserChannel.swift in Sources */,
 				AF01EDD41DE8A4170021582D /* AccountViewController.swift in Sources */,
+				AF2F7B9D1E1C0AC6006392B5 /* MessageTableViewCell.swift in Sources */,
 				AF4EDF681E1AE86A00FB15EF /* CommsButton.swift in Sources */,
 				AF30FDE21DE8B75F00211256 /* CommsProStyleKit.swift in Sources */,
+				AF2F7B9B1E1C02D9006392B5 /* PostMessageViewController.swift in Sources */,
 				AF30FDD81DE8ACB900211256 /* ChannelViewController.swift in Sources */,
 				AF30FDDA1DE8ACD300211256 /* SplashViewController.swift in Sources */,
 				AF01EDC01DE89ADF0021582D /* AppDelegate.swift in Sources */,

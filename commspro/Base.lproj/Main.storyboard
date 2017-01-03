@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Master-->
+        <!--Comms Pro-->
         <scene sceneID="pY4-Hu-kfo">
             <objects>
-                <navigationController title="Master" id="RMx-3f-FxP" sceneMemberID="viewController">
+                <navigationController title="Comms Pro" id="RMx-3f-FxP" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -88,8 +88,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1v-pX-ppj">
-                                <rect key="frame" x="156" y="323" width="63" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRf-9Q-QJb" customClass="CommsButton" customModule="commspro" customModuleProvider="target">
+                                <rect key="frame" x="16" y="101" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8pa-Mb-Ly5"/>
+                                    <constraint firstAttribute="width" constant="120" id="IFU-Ju-D6L"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonText" value="Post Message"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="vgS-YZ-3yq" kind="show" id="y4H-6u-MOH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMG-wm-nOp" customClass="CommsButton" customModule="commspro" customModuleProvider="target">
+                                <rect key="frame" x="239" y="101" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="YX7-HB-3v5"/>
+                                    <constraint firstAttribute="height" constant="30" id="hGw-Cq-qvI"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonText" value="Subscribe"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="subscribeAction:" destination="T4p-1T-Cpo" eventType="touchUpInside" id="mBu-wv-0IJ"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JQX-LP-LyT">
+                                <rect key="frame" x="0.0" y="139" width="375" height="528"/>
+                                <color key="backgroundColor" red="0.80784313725490198" green="0.68235294117647061" blue="0.55686274509803924" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageTableViewCell" id="UYs-f5-yPg" customClass="MessageTableViewCell" customModule="commspro" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UYs-f5-yPg" id="eU6-No-QqB">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Subscribers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljc-wk-h9U">
+                                <rect key="frame" x="16" y="72" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="83I-9l-cQu"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -97,15 +142,106 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="E1v-pX-ppj" firstAttribute="centerX" secondItem="2RR-Cs-VA0" secondAttribute="centerX" id="HAM-sD-0yS"/>
-                            <constraint firstItem="E1v-pX-ppj" firstAttribute="centerY" secondItem="2RR-Cs-VA0" secondAttribute="centerY" id="lgS-Un-T4a"/>
+                            <constraint firstItem="ljc-wk-h9U" firstAttribute="top" secondItem="YDX-DU-yS8" secondAttribute="bottom" constant="8" id="2El-4L-beq"/>
+                            <constraint firstItem="IRf-9Q-QJb" firstAttribute="leading" secondItem="2RR-Cs-VA0" secondAttribute="leadingMargin" id="8bc-n8-pEx"/>
+                            <constraint firstItem="ljc-wk-h9U" firstAttribute="trailing" secondItem="2RR-Cs-VA0" secondAttribute="trailingMargin" id="CIG-kt-7zL"/>
+                            <constraint firstItem="IRf-9Q-QJb" firstAttribute="top" secondItem="ljc-wk-h9U" secondAttribute="bottom" constant="8" id="OGp-JC-8E7"/>
+                            <constraint firstAttribute="trailing" secondItem="JQX-LP-LyT" secondAttribute="trailing" id="YoX-6l-Urs"/>
+                            <constraint firstItem="JQX-LP-LyT" firstAttribute="top" secondItem="VMG-wm-nOp" secondAttribute="bottom" constant="8" id="Zz8-Lz-aFP"/>
+                            <constraint firstItem="JQX-LP-LyT" firstAttribute="leading" secondItem="2RR-Cs-VA0" secondAttribute="leading" id="i3c-9r-SAR"/>
+                            <constraint firstItem="FW5-4x-97C" firstAttribute="top" secondItem="JQX-LP-LyT" secondAttribute="bottom" id="ka8-uG-T2k"/>
+                            <constraint firstItem="ljc-wk-h9U" firstAttribute="leading" secondItem="2RR-Cs-VA0" secondAttribute="leadingMargin" id="o3Q-jq-NLL"/>
+                            <constraint firstItem="VMG-wm-nOp" firstAttribute="top" secondItem="ljc-wk-h9U" secondAttribute="bottom" constant="8" id="wqm-rd-ftz"/>
+                            <constraint firstItem="VMG-wm-nOp" firstAttribute="trailing" secondItem="2RR-Cs-VA0" secondAttribute="trailingMargin" id="yk4-Eq-skl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Channel Name" id="mHe-5A-Kup"/>
+                    <connections>
+                        <outlet property="postMessageButton" destination="IRf-9Q-QJb" id="krL-Jw-L4s"/>
+                        <outlet property="subscribeButton" destination="VMG-wm-nOp" id="2aP-gs-5aO"/>
+                        <outlet property="subscribersLabel" destination="ljc-wk-h9U" id="j0o-hb-O6u"/>
+                        <outlet property="tableView" destination="JQX-LP-LyT" id="Mcv-Sl-ZfK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hxi-7t-wcA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2465" y="96"/>
+            <point key="canvasLocation" x="2464.8000000000002" y="95.802098950524751"/>
+        </scene>
+        <!--Post New Message-->
+        <scene sceneID="PF0-58-YoV">
+            <objects>
+                <viewController title="Post New Message" id="vgS-YZ-3yq" customClass="PostMessageViewController" customModule="commspro" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rfH-7I-g7F"/>
+                        <viewControllerLayoutGuide type="bottom" id="gad-Wv-7h9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="svp-PD-iOp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIz-Ji-nMl" customClass="CommsButton" customModule="commspro" customModuleProvider="target">
+                                <rect key="frame" x="239" y="241" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="hi9-en-P6X"/>
+                                    <constraint firstAttribute="width" constant="120" id="xek-Jn-rt3"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonText" value="Cancel"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hello" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="a6A-MT-rFr">
+                                <rect key="frame" x="16" y="84" width="343" height="149"/>
+                                <color key="backgroundColor" red="0.80784313730000001" green="0.68235294120000001" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="149" id="rRo-YR-mfG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500 / 500" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCU-L1-cOU">
+                                <rect key="frame" x="16" y="246" width="87" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="EUT-dl-ncR"/>
+                                    <constraint firstAttribute="width" constant="87" id="EWq-82-GIN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbU-VV-GAu" customClass="CommsButton" customModule="commspro" customModuleProvider="target">
+                                <rect key="frame" x="111" y="241" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="89N-VW-YnL"/>
+                                    <constraint firstAttribute="height" constant="30" id="ONE-bo-tNc"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonText" value="Post Message"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.33333333333333331" green="0.34901960784313724" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="dbU-VV-GAu" firstAttribute="top" secondItem="a6A-MT-rFr" secondAttribute="bottom" constant="8" id="4d1-ae-WCQ"/>
+                            <constraint firstItem="a6A-MT-rFr" firstAttribute="trailing" secondItem="svp-PD-iOp" secondAttribute="trailingMargin" id="8bv-ah-9Ew"/>
+                            <constraint firstItem="zIz-Ji-nMl" firstAttribute="leading" secondItem="dbU-VV-GAu" secondAttribute="trailing" constant="8" id="F2N-JF-1WY"/>
+                            <constraint firstItem="nCU-L1-cOU" firstAttribute="top" secondItem="a6A-MT-rFr" secondAttribute="bottom" constant="13" id="LWg-B1-8UO"/>
+                            <constraint firstItem="a6A-MT-rFr" firstAttribute="leading" secondItem="svp-PD-iOp" secondAttribute="leadingMargin" id="MOW-6R-kGq"/>
+                            <constraint firstItem="nCU-L1-cOU" firstAttribute="leading" secondItem="svp-PD-iOp" secondAttribute="leadingMargin" id="Qxz-y1-x2C"/>
+                            <constraint firstItem="a6A-MT-rFr" firstAttribute="top" secondItem="rfH-7I-g7F" secondAttribute="bottom" constant="20" id="a8j-JP-T8h"/>
+                            <constraint firstItem="zIz-Ji-nMl" firstAttribute="trailing" secondItem="svp-PD-iOp" secondAttribute="trailingMargin" id="bCG-dX-hyG"/>
+                            <constraint firstItem="zIz-Ji-nMl" firstAttribute="top" secondItem="a6A-MT-rFr" secondAttribute="bottom" constant="8" id="hit-mf-4c6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="zIz-Ji-nMl" id="Sua-aV-GS6"/>
+                        <outlet property="characterCountLabel" destination="nCU-L1-cOU" id="IvC-bb-ktl"/>
+                        <outlet property="messageTextView" destination="a6A-MT-rFr" id="95d-CN-9sx"/>
+                        <outlet property="postMessageButton" destination="dbU-VV-GAu" id="XG2-BQ-mCs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TRp-nJ-vjf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3260" y="94.902548725637189"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jwF-er-FUA">
@@ -368,16 +504,15 @@
             </objects>
             <point key="canvasLocation" x="-856" y="-330"/>
         </scene>
-        <!--Master-->
+        <!--Comms Pro-->
         <scene sceneID="smW-Zh-WAh">
             <objects>
-                <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="commspro" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Comms Pro" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="commspro" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.65490196078431373" green="0.61176470588235299" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Arm-wq-HPj" style="IBUITableViewCellStyleDefault" id="WCw-Qf-5nD">
                                 <rect key="frame" x="0.0" y="22" width="375" height="44"/>

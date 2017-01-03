@@ -1,30 +1,24 @@
 //
-//  ChannelViewController.swift
+//  PostMessageViewController.swift
 //  commspro
 //
-//  Created by Anthony Picciano on 11/25/16.
-//  Copyright © 2016 Anthony Picciano. All rights reserved.
+//  Created by Anthony Picciano on 1/3/17.
+//  Copyright © 2017 Anthony Picciano. All rights reserved.
 //
 
 import UIKit
 
-class ChannelViewController: UIViewController {
-    
-    @IBOutlet weak var subscribersLabel: UILabel!
+class PostMessageViewController: UIViewController {
+
+    @IBOutlet weak var messageTextView: UITextView!
+    @IBOutlet weak var characterCountLabel: UILabel!
     @IBOutlet weak var postMessageButton: CommsButton!
-    @IBOutlet weak var subscribeButton: CommsButton!
-    @IBOutlet weak var tableView: UITableView!
-    
-    var channel: String?
+    @IBOutlet weak var cancelButton: CommsButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = channel
     }
 
-    @IBAction func subscribeAction(_ sender: Any) {
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
