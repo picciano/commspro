@@ -92,7 +92,7 @@ class MasterViewController: UITableViewController {
         if segue.identifier == "showChannel" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let controller = (segue.destination as! UINavigationController).topViewController as! ChannelViewController
-                controller.channel = item(for: indexPath)
+                controller.channel = channel(for: indexPath)
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
@@ -118,7 +118,7 @@ class MasterViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = item(for: indexPath)
+        cell.textLabel?.text = titleString(for: indexPath)
         cell.accessoryView = nil
         
         if indexPath.section == 0 && indexPath.row == 0 {
@@ -183,7 +183,7 @@ class MasterViewController: UITableViewController {
         }
     }
     
-    private func item(for indexPath: IndexPath) -> String? {
+    private func titleString(for indexPath: IndexPath) -> String? {
         var item: String?
         
         switch indexPath.section {
@@ -192,8 +192,23 @@ class MasterViewController: UITableViewController {
         case 1:
             item = subscribedChannels?[indexPath.row].name
         default:
+            item = channel(for: indexPath)?.name
+        }
+        
+        return item
+    }
+    
+    private func channel(for indexPath: IndexPath) -> Channel? {
+        var item: Channel?
+        
+        switch indexPath.section {
+        case 0:
+            break
+        case 1:
+            item = subscribedChannels?[indexPath.row]
+        default:
             let group = groups[indexPath.section - 2]
-            item = group.sortedChannels[indexPath.row].name
+            item = group.sortedChannels[indexPath.row]
         }
         
         return item

@@ -8,26 +8,46 @@
 
 import UIKit
 
-class ChannelViewController: UIViewController {
+class ChannelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var subscribersLabel: UILabel!
     @IBOutlet weak var postMessageButton: CommsButton!
     @IBOutlet weak var subscribeButton: CommsButton!
     @IBOutlet weak var tableView: UITableView!
     
-    var channel: String?
+    var channel: Channel?
+    var posts: [Post]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = channel
+        title = channel?.name
+        
+        if let channel = channel {
+            Post.get(from: channel) { posts in
+                self.posts = posts
+                self.tableView.reloadData()
+            }
+        }
     }
 
     @IBAction func subscribeAction(_ sender: Any) {
+        
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // MARK: - Table View
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell", for: indexPath)
+        cell.textLabel?.text = "Placeholder text"
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
+        return false
     }
     
 

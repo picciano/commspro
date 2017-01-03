@@ -1,5 +1,5 @@
 //
-//  MessageTableViewCell.swift
+//  PostTableViewCell.swift
 //  commspro
 //
 //  Created by Anthony Picciano on 1/3/17.
@@ -8,7 +8,9 @@
 
 import UIKit
 
-class MessageTableViewCell: UITableViewCell {
+class PostTableViewCell: UITableViewCell {
+    
+    var post: Post?
 
     override func awakeFromNib() {
         super.awakeFromNib()

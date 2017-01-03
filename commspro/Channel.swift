@@ -11,6 +11,7 @@ class Channel: NSObject {
     static fileprivate let backendless = Backendless.sharedInstance()
     static fileprivate let dataStore = backendless?.data.of(Channel.ofClass())
     
+    var objectId: String!
     var name: String!
     
     static func get(completion: @escaping ([Channel]) -> ()) {
@@ -24,12 +25,12 @@ class Channel: NSObject {
     
     static fileprivate var dataQuery: BackendlessDataQuery {
         let dataQuery = BackendlessDataQuery()
-        dataQuery.queryOptions = Channel.sortOption
+        dataQuery.queryOptions = Channel.queryOptions
         
         return dataQuery
     }
     
-    static fileprivate var sortOption: QueryOptions {
+    static fileprivate var queryOptions: QueryOptions {
         let queryOptions = QueryOptions()
         queryOptions.sort(by: ["name"])
         

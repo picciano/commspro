@@ -11,6 +11,7 @@ class UserChannel: NSObject {
     static fileprivate let backendless = Backendless.sharedInstance()
     static fileprivate let dataStore = backendless?.data.of(UserChannel.ofClass())
     
+    var objectId: String!
     var user: BackendlessUser!
     var channel: Channel!
     
@@ -37,12 +38,12 @@ class UserChannel: NSObject {
     
     static fileprivate var dataQuery: BackendlessDataQuery {
         let dataQuery = BackendlessDataQuery()
-        dataQuery.queryOptions = UserChannel.sortOption
+        dataQuery.queryOptions = UserChannel.queryOptions
         
         return dataQuery
     }
     
-    static fileprivate var sortOption: QueryOptions {
+    static fileprivate var queryOptions: QueryOptions {
         let queryOptions = QueryOptions()
         queryOptions.sort(by: ["created"])
         
