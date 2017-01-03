@@ -50,6 +50,14 @@ class ChannelViewController: UIViewController, UITableViewDelegate, UITableViewD
         return nil
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if let post = posts?[indexPath.row] {
+            return Post.height(for: post, frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: .infinity))
+        } else {
+            return 0
+        }
+    }
+    
 
     /*
     // MARK: - Navigation
