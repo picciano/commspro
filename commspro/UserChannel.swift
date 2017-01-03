@@ -9,7 +9,7 @@
 class UserChannel: NSObject {
     
     static fileprivate let backendless = Backendless.sharedInstance()
-    static fileprivate let dataStore = backendless?.data.of(UserChannel.ofClass())
+    static fileprivate let dataStore = backendless?.data.of(UserChannel.self)
     
     var objectId: String!
     var user: BackendlessUser!

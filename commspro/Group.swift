@@ -9,7 +9,7 @@
 class Group: NSObject {
     
     static fileprivate let backendless = Backendless.sharedInstance()
-    static fileprivate let dataStore = backendless?.data.of(Group.ofClass())
+    static fileprivate let dataStore = backendless?.data.of(Group.self)
     
     var objectId: String!
     var name: String!

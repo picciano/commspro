@@ -9,7 +9,7 @@
 class Post: NSObject {
     
     static fileprivate let backendless = Backendless.sharedInstance()
-    static fileprivate let dataStore = backendless?.data.of(Post.ofClass())
+    static fileprivate let dataStore = backendless?.data.of(Post.self)
     
     var objectId: String!
     var channel: Channel!
